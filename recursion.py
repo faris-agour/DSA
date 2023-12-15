@@ -62,4 +62,37 @@ print(rec_sum_memo(8))
 print(rec_sum_memo(5))
 print('-' * 50)
 
+
 # ---------------------------------------------------------------------------------------
+# reverse ex in rec
+def reverse(s):
+    # return s[::-1]
+    # ==
+    return reverse(s[1:]) + s[0] if len(s) >= 1 else s
+
+
+print(reverse("fares"))
+
+print('-' * 50)
+# ---------------------------------------------------------------------------------------
+# permutation
+from itertools import permutations
+
+input_string = '123'
+perms = permutations(input_string)
+l = []
+for p in perms:
+    a = ''.join(p)
+    l.append(a)
+print(l)
+print('-' * 50)
+
+
+# ---------------------------------------------------------------------------------------
+
+# Fibonacci rec
+def fibonacci(n):
+    return fibonacci(n - 1) + fibonacci(n - 2) if n > 2 else 1
+
+
+print(fibonacci(10))
