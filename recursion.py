@@ -41,3 +41,25 @@ print('-' * 50)
 
 # ---------------------------------------------------------------------------------------
 
+# MEMOIZATION
+# is an optimization technique used in programming to improve the performance of functions by caching
+# (storing) the results of expensive function calls and returning the cached result when the same inputs occur again.
+
+# use it in ex/1
+def rec_sum_memo(num, memo={}):
+    if num in memo:
+        return f"Retrieved from cache: recursion_sum({num}) = {memo[num]}"
+    if num == 0:
+        return 0
+    else:
+        res = num + rec_sum(num - 1)
+        memo[num] = res
+        return res
+
+
+print(rec_sum_memo(5))
+print(rec_sum_memo(8))
+print(rec_sum_memo(5))
+print('-' * 50)
+
+# ---------------------------------------------------------------------------------------
